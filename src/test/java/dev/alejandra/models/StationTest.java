@@ -50,5 +50,23 @@ import org.junit.jupiter.api.Test;
  
          assertThat(station.getTotalRevenue(), is(50.00));
      }
+
+     @Test
+     void testShouldClaimFiftyPerAxisIfVehicleIsTruck() {
+ 
+         String name = "Stormwind";
+         String city = "Elwynn Forest";
+         
+         Station station = new Station(name, city);
+ 
+         String brand = "Chevrolet";
+         String licensePlate = "444XAZ";    
+ 
+         Truck truck = new Truck(brand, licensePlate, 3);
+ 
+         station.claimToll(truck);
+ 
+         assertThat(station.getTotalRevenue(), is(150.00));
+     }
  }
  
