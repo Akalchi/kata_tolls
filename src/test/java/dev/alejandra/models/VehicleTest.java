@@ -26,6 +26,6 @@ public class VehicleTest {
  
          Car car = new Car(brand, licensePlate);
  
-         assertThat(car.getLicensePlate(), is(brand));
+         assertThat(car.getLicensePlate(), is(licensePlate));
      }
 }
