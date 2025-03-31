@@ -23,6 +23,7 @@ import org.junit.jupiter.api.Test;
          assertThat(station.getCity(), is(city));
          assertThat(station.getId(), is(1));
          assertThat(station2.getId(), is(2));
+         assertThat(station.getTotalRevenue(), is(0.00));
      }
  }
  
