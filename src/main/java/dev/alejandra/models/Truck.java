@@ -13,4 +13,9 @@ public class Truck extends Vehicle {
         return axis;
     }
 
+    @Override
+    public double calculateToll() {
+        return axis * 50.00;
+    }
+
 }

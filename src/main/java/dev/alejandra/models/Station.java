@@ -30,11 +30,9 @@ public class Station {
     }
 
     public void claimToll(Vehicle vehicle) {
-        if (vehicle instanceof Car) { totalRevenue += 100.00; }
-        if (vehicle instanceof Motorbike) { totalRevenue += 50.00; }
-        if (vehicle instanceof Truck) { 
-            totalRevenue += (((Truck)vehicle).getAxis() * 50.00); 
+        double tollPrice = vehicle.calculateToll();
+        totalRevenue += tollPrice;
     }
 }
 
-}
+

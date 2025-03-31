@@ -23,4 +23,6 @@ public abstract class Vehicle {
     public int getId(){
         return id;
     }
+
+    public abstract double calculateToll();
 }

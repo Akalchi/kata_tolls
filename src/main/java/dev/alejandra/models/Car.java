@@ -6,4 +6,9 @@ public class Car extends Vehicle {
         super(brand, licensePlate);
     }
 
+    @Override
+    public double calculateToll() {
+        return 100.00;
+    }
+
 }
