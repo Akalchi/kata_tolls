@@ -17,9 +17,12 @@ import org.junit.jupiter.api.Test;
  
          
          Station station = new Station(name, city);
+         Station station2 = new Station(name, city);
  
          assertThat(station.getName(), is(name));
          assertThat(station.getCity(), is(city));
+         assertThat(station.getId(), is(1));
+         assertThat(station2.getId(), is(2));
      }
  }
  
