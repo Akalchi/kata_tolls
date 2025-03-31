@@ -20,7 +20,7 @@ public class VehicleTest {
         assertThat(car.getId(), is(1));
         assertThat(car2.getId(), is(2));
 
-        Vehicle truck = new Truck(brand, licensePlate, 3);
+        Truck truck = new Truck(brand, licensePlate, 3);
         assertThat(truck.getAxis(), is(3));
     }
 }
