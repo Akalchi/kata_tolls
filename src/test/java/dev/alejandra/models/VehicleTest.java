@@ -13,8 +13,11 @@ public class VehicleTest {
         String licensePlate = "444XAZ";
 
         Vehicle car = new Car(brand, licensePlate);
+        Vehicle car2 = new Car(brand, licensePlate);
 
         assertThat(car.getBrand(), is(brand));
         assertThat(car.getLicensePlate(), is(licensePlate));
+        assertThat(car.getId(), is(1));
+        assertThat(car2.getId(), is(2));
     }
 }
