@@ -48,7 +48,7 @@ import org.junit.jupiter.api.Test;
  
          station.claimToll(car);
  
-         assertThat(station.getTotalRevenue(), is(50.00));
+         assertThat(station.getTotalRevenue(), is(100.00));
      }
 
      @Test
