@@ -28,4 +28,8 @@ public class Station {
     public double getTotalRevenue() {
         return totalRevenue;
     }
+
+    public void claimToll(Vehicle vehicle) {
+        if (vehicle instanceof Car) { totalRevenue += 50.00; }
+    }
 }
