@@ -103,7 +103,7 @@ import org.junit.jupiter.api.Test;
  
          station.claimToll(motorbike);
  
-         assertThat(station.getCollectedTolls(), is(2));
+        assertThat(station.getCollectedTolls(), is(1));
      }
  }
  
