@@ -9,9 +9,11 @@ public class VehicleTest {
     @Test
     void testShouldReturnAttributesOfVehicles() {
 
+        
+
         String brand = "Chevrolet";
         String licensePlate = "444XAZ";
-
+        Vehicle.idCounter = 1;
         Vehicle car = new Car(brand, licensePlate);
         Vehicle car2 = new Car(brand, licensePlate);
 

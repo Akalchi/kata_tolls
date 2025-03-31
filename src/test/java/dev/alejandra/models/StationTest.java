@@ -101,7 +101,7 @@ import org.junit.jupiter.api.Test;
          Truck truck = new Truck(brand, licensePlate, 3);
          Vehicle motorbike = new Motorbike(brand, licensePlate);
  
-         station.claimToll(truck);
+         station.claimToll(motorbike);
  
          assertThat(station.getCollectedTolls(), is(2));
      }
