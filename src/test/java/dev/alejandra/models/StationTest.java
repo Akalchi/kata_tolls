@@ -25,5 +25,23 @@ import org.junit.jupiter.api.Test;
          assertThat(station2.getId(), is(2));
          assertThat(station.getTotalRevenue(), is(0.00));
      }
+
+     @Test
+     void testShouldClaimFiftyIfVehicleIsCar() {
+ 
+         String name = "Stormwind";
+         String city = "Elwynn Forest";
+         
+         Station station = new Station(name, city);
+ 
+         String brand = "Chevrolet";
+         String licensePlate = "444XAZ";
+ 
+         Vehicle car = new Car(brand, licensePlate);
+ 
+         station.claimToll(car);
+ 
+         assertThat(station.getTotalRevenue(), is(50.00));
+     }
  }
  
