@@ -3,10 +3,17 @@ package dev.alejandra.models;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
  
  public class StationTest {
+
+      @BeforeEach
+ 
+      void setUp() {
+         Station.idCounter = 1;
+      }
  
      @Test
      @DisplayName("It should return the attributes")

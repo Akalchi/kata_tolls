@@ -3,7 +3,7 @@ package dev.alejandra.models;
 public class Station {
 
     private String name, city;
-    private static int idCounter = 1;
+    static int idCounter = 1;
     private int id;
     private double totalRevenue;
  
