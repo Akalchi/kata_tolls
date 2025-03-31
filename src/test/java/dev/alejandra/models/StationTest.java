@@ -2,7 +2,12 @@ package dev.alejandra.models;
 
 
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.is;
+
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -104,6 +109,41 @@ import org.junit.jupiter.api.Test;
          station.claimToll(motorbike);
  
         assertThat(station.getCollectedTolls(), is(1));
+     }
+
+    @Test
+     void testShouldPrintVehiclesAndTotalRevenue() {
+ 
+         String name = "Stormwind";
+         String city = "Elwynn Forest";
+         
+         Station station = new Station(name, city);
+ 
+         String brand = "Chevrolet";    
+         String licensePlate = "444XAZ";
+ 
+         Truck truck = new Truck(brand, licensePlate, 3);
+         Vehicle motorbike = new Motorbike(brand, "1234ABC");
+ 
+         station.claimToll(truck);
+         station.claimToll(motorbike);
+ 
+         ByteArrayOutputStream output = new ByteArrayOutputStream();
+         PrintStream originalOut = System.out;
+         System.setOut(new PrintStream(output));
+ 
+         station.printDetails();
+ 
+         System.setOut(originalOut);
+ 
+         String outputString = output.toString();
+ 
+         assertThat(outputString, containsString("Revenue details:"));
+         assertThat(outputString, containsString(truck.getLicensePlate()));
+         assertThat(outputString, containsString(motorbike.getLicensePlate()));
+         assertThat(outputString, containsString(String.valueOf(motorbike.calculateToll())));
+         assertThat(outputString, containsString(String.valueOf(truck.calculateToll())));
+         assertThat(outputString, containsString(String.valueOf(station.getTotalRevenue())));
      }
  }
  
