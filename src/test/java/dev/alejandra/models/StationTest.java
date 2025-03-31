@@ -34,7 +34,7 @@ import org.junit.jupiter.api.Test;
      }
 
      @Test
-     void testShouldClaimFiftyIfVehicleIsCar() {
+     void testShouldClaimHundredIfVehicleIsCar() {
  
          String name = "Stormwind";
          String city = "Elwynn Forest";
@@ -67,6 +67,24 @@ import org.junit.jupiter.api.Test;
          station.claimToll(truck);
  
          assertThat(station.getTotalRevenue(), is(150.00));
+     }
+
+     @Test
+     void testShouldClaimFiftyIfVehicleIsMotorbike() {
+ 
+         String name = "Stormwind";
+         String city = "Elwynn Forest";
+         
+         Station station = new Station(name, city);
+ 
+         String brand = "Harley Davidson";
+         String licensePlate = "444XAZ";
+ 
+         Vehicle motorbike = new Motorbike(brand, licensePlate);
+ 
+         station.claimToll(motorbike);
+ 
+         assertThat(station.getTotalRevenue(), is(50.00));
      }
  }
  
