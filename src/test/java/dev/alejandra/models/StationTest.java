@@ -86,5 +86,24 @@ import org.junit.jupiter.api.Test;
  
          assertThat(station.getTotalRevenue(), is(50.00));
      }
+
+     @Test
+     void testShouldAddNumberOfTollsAfterPayment() {
+ 
+         String name = "Stormwind";
+         String city = "Elwynn Forest";
+         
+         Station station = new Station(name, city);
+ 
+         String brand = "Chevrolet";
+         String licensePlate = "444XAZ";
+ 
+         Truck truck = new Truck(brand, licensePlate, 3);
+         Vehicle motorbike = new Motorbike(brand, licensePlate);
+ 
+         station.claimToll(truck);
+ 
+         assertThat(station.getCollectedTolls(), is(2));
+     }
  }
  
